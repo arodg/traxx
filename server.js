@@ -1,22 +1,20 @@
 const express = require("express");
-const path = require("path");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
+const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-
-// Serve up static assets
-app.use(express.static("client/build"));
-
-// Parse application/x-www-form-urlencoded
+// Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// Parse application/json
 app.use(bodyParser.json());
+// Serve up static assets
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-// Import routes and give the server access to them.
-const routes = require("./controllers/_controllers.js");
-app.use("/", routes);
+// Add routes, both API and view
+app.use(routes);
 
 // Send every request to the React app
 // Define any API routes before this runs
