@@ -1,4 +1,4 @@
-ROP DATABASE IF EXISTS trax_db;
+DROP DATABASE IF EXISTS trax_db;
 CREATE DATABASE trax_db;
 
 USE trax_db;
