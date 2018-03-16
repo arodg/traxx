@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var vendor = sequelize.define("trax_user", {
+  var trax_user = sequelize.define("trax_user", {
     
     last_name: {
       type: DataTypes.STRING,
