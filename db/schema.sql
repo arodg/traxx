@@ -11,7 +11,8 @@ CREATE TABLE trax_user
   first_name VARCHAR(25) NOT NULL,
   username VARCHAR(25) NOT NULL,
   security_role VARCHAR(25) NOT NULL,
-  email VARCHAR(50) NOT NULL
+  email VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id)
 );
 
 
@@ -23,7 +24,8 @@ CREATE TABLE vendor
   phone VARCHAR(12) NOT NULL,
   contact_name VARCHAR(50) NOT NULL,
   email VARCHAR(50) NOT NULL,
-  website VARCHAR(50)
+  website VARCHAR(50),
+  PRIMARY KEY (id)
 );
 
 
@@ -41,7 +43,8 @@ CREATE TABLE purchase_request
   created_date DATE NOT NULL,
   vendor_id INT NOT NULL,
   status VARCHAR(25),
-  completed_date DATE NOT NULL
+  completed_date DATE NOT NULL,
+  PRIMARY KEY (id)
 );
 
 
@@ -53,5 +56,6 @@ CREATE TABLE item
   serial_number INT NOT NULL,
   quantity INT UNSIGNED NOT NULL,
   unit_of_measure VARCHAR(50) NOT NULL,
-  price DECIMAL(13,4) NOT NULL
+  price DECIMAL(13,4) NOT NULL,
+  PRIMARY KEY (id)
 );
