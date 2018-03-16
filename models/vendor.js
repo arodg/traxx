@@ -3,27 +3,32 @@ var Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
   var vendor = sequelize.define("vendor", {
     
-    last_name: {
+    vendor_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    first_name: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    username: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
-    security_role: {
+    contact_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
 
     email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+
+    website: {
       type: DataTypes.STRING,
       allowNull: false
     }
