@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "trax_db",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "gpf1payoobskuwnx",
+    "password": "q8sxnlcfkdyhrqt1",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
