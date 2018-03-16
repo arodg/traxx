@@ -6,7 +6,7 @@ USE trax_db;
 
 CREATE TABLE trax_user 
 (
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT AUTO_INCREMENT NOT NULL,
   last_name VARCHAR(25) NOT NULL,
   first_name VARCHAR(25) NOT NULL,
   username VARCHAR(25) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE trax_user
 
 CREATE TABLE vendor
 (
-  id SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT AUTO_INCREMENT NOT NULL,
   vendor_name VARCHAR(100) NOT NULL,
   description VARCHAR(255),
   phone VARCHAR(12) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE vendor
 
 CREATE TABLE purchase_request
 (
-  id SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT AUTO_INCREMENT NOT NULL,
   request_number SMALLINT(6) NOT NULL,
   tax_rate DECIMAL(5,2) NOT NULL,
   estimated_shipping DECIMAL(13,4) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE purchase_request
 
 CREATE TABLE item
 (
-  id SMALLINT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  id INT AUTO_INCREMENT NOT NULL,
   purchase_request_request_number SMALLINT NOT NULL,
   item_name VARCHAR(50) NOT NULL,
   serial_number INT NOT NULL,
