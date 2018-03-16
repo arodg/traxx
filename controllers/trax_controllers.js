@@ -9,7 +9,7 @@ const db = require("../models");
 router.get("/", function(req, res) {
   db.item.findAll({}).then(function(data) {
     var hbsObject = {
-      vendor: data
+      item: data
     };
     res.render("index", hbsObject);
   });
@@ -27,7 +27,7 @@ router.post("/api/", function(req, res) {
 
 router.put("/api/item/:id", function(req, res) {
   db.item.update({
-    
+  
   }, {
     where: {
       id: req.params.id
