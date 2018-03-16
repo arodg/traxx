@@ -13,8 +13,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Add routes, both API and view
-app.use(routes);
+// Import routes and give the server access to them.
+var routes = require("./controllers/trax_controllers.js");
+app.use("/", routes);
 
 // Send every request to the React app
 // Define any API routes before this runs
