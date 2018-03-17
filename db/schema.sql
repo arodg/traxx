@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS trax_db;
-CREATE DATABASE trax_db;
+DROP DATABASE IF EXISTS traxx_db;
+CREATE DATABASE traxx_db;
 
-USE trax_db;
+USE traxx_db;
 
 
 CREATE TABLE employee 
@@ -51,7 +51,6 @@ CREATE TABLE item
   item_id INT AUTO_INCREMENT NOT NULL,
   request_id INT NOT NULL,
   item_name VARCHAR(50) NOT NULL,
-  unit_of_measure VARCHAR(50) NOT NULL,
   price DECIMAL(13,4) NOT NULL,
   PRIMARY KEY (item_id),
   FOREIGN KEY (request_id) REFERENCES purchase_request (request_id)
