@@ -29,11 +29,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    completed_date: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-
     tax_rate: {
       type: DataTypes.DECIMAL,
       allowNull: false
@@ -54,10 +49,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    status: {
+    comments: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    
   
   });
     
