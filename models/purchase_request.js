@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var purchase_request = sequelize.define("purchase_request", {
+  var purchase_request = sequelize.define("purchase_requests", {
     
     request_id: {
       type: DataTypes.INTEGER,

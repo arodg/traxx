@@ -4,7 +4,7 @@ CREATE DATABASE traxx_db;
 USE traxx_db;
 
 
-CREATE TABLE employee 
+CREATE TABLE employees 
 (
   employee_id INT AUTO_INCREMENT NOT NULL,
   last_name VARCHAR(25) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE employee
 );
 
 
-CREATE TABLE vendor
+CREATE TABLE vendors
 (
   vendor_id INT AUTO_INCREMENT NOT NULL,
   company_name VARCHAR(40) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE vendor
 );
 
 
-CREATE TABLE purchase_request
+CREATE TABLE purchase_requests
 (
   request_id INT AUTO_INCREMENT NOT NULL,
   employee_id INT NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE purchase_request
 );
 
 
-CREATE TABLE item
+CREATE TABLE items
 (
   item_id INT AUTO_INCREMENT NOT NULL,
   request_id INT NOT NULL,

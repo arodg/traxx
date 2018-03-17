@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var employee = sequelize.define("employee", {
+  var employee = sequelize.define("employees", {
     
     employee_id: {
       type: DataTypes.INTEGER,
