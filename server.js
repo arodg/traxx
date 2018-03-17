@@ -15,18 +15,16 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Import routes and give the server access to them.
-//var routes = require("./controllers/traxx_controllers.js");
-//app.use("/", routes);
+var routes = require("./routes");
 
-app.get('/ping', function (req, res) {
-	return res.send('pong');
+// Use apiRoutes
+app.use("/api", routes);
+
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-
 
 
 // Sync sequelize models
