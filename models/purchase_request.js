@@ -3,8 +3,34 @@ var Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
   var purchase_request = sequelize.define("purchase_request", {
     
-    request_number: {
+    request_id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
+
+    employee_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+
+    vendor_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+
+    request_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+
+    require_date: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+
+    completed_date: {
+      type: DataTypes.DATE,
       allowNull: false
     },
 
@@ -23,46 +49,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    date_needed: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-
     justification: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-
-    trax_user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
-    created_date: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-
-    vendor_id: {
-      type: DataTypes.INTEGER,
       allowNull: false
     },
 
     status: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-
-    completed_date: {
-      type: DataTypes.DATE,
-      allowNull: false
-    },
-
+    }
   
   });
     
