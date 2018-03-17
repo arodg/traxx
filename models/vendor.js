@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
 
     website: {
       type: DataTypes.STRING,
