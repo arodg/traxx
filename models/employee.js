@@ -1,7 +1,13 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var trax_user = sequelize.define("trax_user", {
+  var trax_user = sequelize.define("employee", {
+    
+    employee_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true
+    },
     
     last_name: {
       type: DataTypes.STRING,
@@ -18,11 +24,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    security_role: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-
     email: {
       type: DataTypes.STRING,
       allowNull: false
@@ -30,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
   
   });
     
-  return trax_user;
+  return employee;
 };
 
 
