@@ -8,6 +8,7 @@ const app = express();
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -16,12 +17,6 @@ if (process.env.NODE_ENV === "production") {
 // Import routes and give the server access to them.
 var routes = require("./controllers/trax_controllers.js");
 app.use("/", routes);
-
-// Send every request to the React app
-// Define any API routes before this runs
-//app.get("*", function(req, res) {
- // res.sendFile(path.join(__dirname, "./client/build/index.html"));
-//});
 
 
 // Sync sequelize models
