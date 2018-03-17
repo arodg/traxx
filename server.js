@@ -15,8 +15,18 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/traxx_controllers.js");
-app.use("/", routes);
+//var routes = require("./controllers/traxx_controllers.js");
+//app.use("/", routes);
+
+app.get('/ping', function (req, res) {
+	return res.send('pong');
+});
+
+app.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
 
 
 // Sync sequelize models

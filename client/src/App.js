@@ -4,10 +4,6 @@ import './App.css';
 
 class App extends Component {
   
-  componentDidMount() {
-    fetch('/users')
-    .then(res => res.json());
-  }
 
   render() {
     return (
