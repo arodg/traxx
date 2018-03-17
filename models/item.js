@@ -26,7 +26,7 @@ module.exports = function(sequelize, DataTypes) {
     unit_of_measure: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
 
     price: {
       type: DataTypes.DECIMAL,
