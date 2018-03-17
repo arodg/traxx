@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const traxxController = require("../../controllers/traxx_controllers");
+const traxx_controllers = require("../../controllers/traxx_controllers");
 
-// Matches with "/api/books"
+// Matches with "/api/b"
 router.route("/")
   .get(traxx_controllers.findAll)
   .post(traxx_controllers.create);
