@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/trax_controllers.js");
+var routes = require("./controllers/traxx_controllers.js");
 app.use("/", routes);
 
 
