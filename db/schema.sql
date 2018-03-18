@@ -15,43 +15,43 @@ CREATE TABLE employees
 );
 
 
-CREATE TABLE vendors
-(
-  vendor_id INT AUTO_INCREMENT NOT NULL,
-  company_name VARCHAR(40) NOT NULL,
-  contact_name VARCHAR(40),
-  contact_phone VARCHAR(24),
-  contact_email VARCHAR(50),
-  website VARCHAR(50),
-  PRIMARY KEY (vendor_id)
-);
-
-
 CREATE TABLE purchase_requests
 (
   request_id INT AUTO_INCREMENT NOT NULL,
   employee_id INT NOT NULL,
-  vendor_id INT NOT NULL,
-  request_date DATE NOT NULL,
-  require_date DATE NOT NULL,
-  completed_date DATE,
+  approver_id INT NOT NULL,
+  request_created DATE NOT NULL,
+  request_required DATE NOT NULL,
+  request_approved DATE,
+  request_total DECIMAL(13,4) NOT NULL,
   tax_rate DECIMAL(5,2) NOT NULL,
   estimated_shipping DECIMAL(13,4) NOT NULL,
-  request_total DECIMAL(13,4) NOT NULL,
   justification VARCHAR(255),
-  status VARCHAR(25),
+  request_status VARCHAR(5), NOT NULL,
   PRIMARY KEY (request_id),
-  FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
-  FOREIGN KEY (vendor_id) REFERENCES vendor (vendor_id)
+  FOREIGN KEY (employee_id) REFERENCES employees (employee_id),
+  FOREIGN KEY (approver_id) REFERENCES employees (employee_id),
+  FOREIGN KEY (request_status) REFERENCES pr_status (request_status)
 );
 
+CREATE TABLE pr_status
+(
+  request_status INT,
+  status_description VARCHAR
+);
+
+CREATE TABLE items_in_pr
+(
+  item_id INT NOT NULL,
+  request_id INT NOT NULL,
+  quantity
+);
 
 CREATE TABLE items
 (
   item_id INT AUTO_INCREMENT NOT NULL,
-  request_id INT NOT NULL,
   item_name VARCHAR(50) NOT NULL,
-  price DECIMAL(13,4) NOT NULL,
+  extended_price DECIMAL(13,4) NOT NULL,
+  unit_price DECIMAL(13,4) NOT NULL,
   PRIMARY KEY (item_id),
-  FOREIGN KEY (request_id) REFERENCES purchase_request (request_id)
 );
