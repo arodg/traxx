@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const traxx_controllers = require("../../controllers/traxx_controllers");
+const prController = require("../../controllers/pr_Controller");
 
-// Matches with "/api/b"
+// Matches with "/api/purchase_requests"
 router.route("/")
-  .get(traxx_controllers.findAll)
-  .post(traxx_controllers.create);
+  .get(prController.findAll)
+  .post(prController.create);
 
-// Matches with "/api/books/:id"
+// Matches with "/api/purchase_requests/:id"
 router
   .route("/:id")
-  .get(traxx_controllers.findById)
-  .put(traxx_controllers.update)
-  .delete(traxx_controllers.remove);
+  .get(prController.findById)
+  .put(prController.update)
+  .delete(prController.remove);
 
 module.exports = router;
