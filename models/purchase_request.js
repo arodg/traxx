@@ -14,19 +14,23 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    vendor_id: {
+    approver_id: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
 
-    request_date: {
+    request_created: {
       type: DataTypes.DATE,
       allowNull: false
     },
 
-    require_date: {
+    request_required: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+
+    request_approved: {
+      type: DataTypes.DATE,
     },
 
     tax_rate: {
@@ -46,15 +50,17 @@ module.exports = function(sequelize, DataTypes) {
 
     justification: {
       type: DataTypes.STRING,
-      allowNull: false
     },
 
     comments: {
       type: DataTypes.STRING,
-      allowNull: false
     },
+
+    request_status: {
+      type: DataTypes.STRING
+      allowNull: false
+    }
     
-  
   });
     
   return purchase_request;

@@ -26,7 +26,8 @@ CREATE TABLE purchase_requests
   tax_rate DECIMAL(5,2) NOT NULL,
   estimated_shipping DECIMAL(10,2) NOT NULL,
   justification VARCHAR(255),
-  request_status VARCHAR(5), NOT NULL,
+  comments VARCHAR(255),
+  request_status ENUM ("approved", "pending", "denied") NOT NULL,
   createdAt TIMESTAMP NOT NULL,
   
   FOREIGN KEY (employee_id) REFERENCES employees (employee_id),
