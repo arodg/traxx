@@ -44,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
   };
 
   request_detail.associate = function (models) {
-    request_detail.belongsTo(models.items, {
+    request_detail.hasMany(models.items, {
       foreignKey: "item_id"
     });
   };
