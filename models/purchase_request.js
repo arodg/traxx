@@ -57,7 +57,7 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     request_status: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
       allowNull: false
     }
     
