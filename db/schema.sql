@@ -40,10 +40,10 @@ CREATE TABLE request_detail
 (
   request_id INT NOT NULL,
   item_id INT NOT NULL,
-  quantity, INT NOT NULL,
-  unit_price, DECIMAL(10,2) NOT NULL,
+  quantity INT NOT NULL,
+  unit_price DECIMAL(10,2) NOT NULL,
   extended_price DECIMAL(10,2) NOT NULL,
-  request_line_number, INT NOT NULL,
+  request_line_number INT NOT NULL,
   createdAt TIMESTAMP NOT NULL,
 
   FOREIGN KEY (request_id) REFERENCES purchase_requests (request_id),

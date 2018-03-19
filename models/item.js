@@ -9,18 +9,8 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
 
-    request_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
     item_name: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-
-    price: {
-      type: DataTypes.DECIMAL,
       allowNull: false
     }
   
@@ -28,4 +18,3 @@ module.exports = function(sequelize, DataTypes) {
     
   return item;
 };
-
