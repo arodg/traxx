@@ -62,7 +62,13 @@ module.exports = function(sequelize, DataTypes) {
     }
     
   });
-    
+  
+  purchase_request.associate = function(models) {
+    purchase_request.belongsTo(models.employees, {
+      foreignKey: "employee_id"
+    });
+  };
+  
   return purchase_request;
 };
 
