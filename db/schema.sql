@@ -9,8 +9,8 @@ CREATE TABLE employees
   employee_id INT AUTO_INCREMENT NOT NULL,
   last_name VARCHAR(25) NOT NULL,
   first_name VARCHAR(25) NOT NULL,
-  username VARCHAR(25) NOT NULL,
   email VARCHAR(50) NOT NULL,
+  createdAt TIMESTAMP NOT NULL,
   PRIMARY KEY (employee_id)
 );
 
@@ -23,35 +23,40 @@ CREATE TABLE purchase_requests
   request_created DATE NOT NULL,
   request_required DATE NOT NULL,
   request_approved DATE,
-  request_total DECIMAL(13,4) NOT NULL,
+  request_total DECIMAL(10,2) NOT NULL,
   tax_rate DECIMAL(5,2) NOT NULL,
-  estimated_shipping DECIMAL(13,4) NOT NULL,
+  estimated_shipping DECIMAL(10,2) NOT NULL,
   justification VARCHAR(255),
   request_status VARCHAR(5), NOT NULL,
-  PRIMARY KEY (request_id),
+  createdAt TIMESTAMP NOT NULL,
+  
   FOREIGN KEY (employee_id) REFERENCES employees (employee_id),
-  FOREIGN KEY (approver_id) REFERENCES employees (employee_id),
-  FOREIGN KEY (request_status) REFERENCES pr_status (request_status)
+  
+  PRIMARY KEY (request_id)
 );
 
-CREATE TABLE pr_status
-(
-  request_status INT,
-  status_description VARCHAR
-);
 
-CREATE TABLE items_in_pr
+CREATE TABLE request_detail
 (
-  item_id INT NOT NULL,
   request_id INT NOT NULL,
-  quantity
+  item_id INT NOT NULL,
+  quantity, INT NOT NULL,
+  unit_price, DECIMAL(10,2) NOT NULL,
+  extended_price DECIMAL(10,2) NOT NULL,
+  request_line_number, INT NOT NULL,
+  createdAt TIMESTAMP NOT NULL,
+
+  FOREIGN KEY (request_id) REFERENCES purchase_requests (request_id),
+  FOREIGN KEY (item_id) REFERENCES items (item_id),
+  
+  PRIMARY KEY (request_id, item_id)
 );
+
 
 CREATE TABLE items
 (
   item_id INT AUTO_INCREMENT NOT NULL,
   item_name VARCHAR(50) NOT NULL,
-  extended_price DECIMAL(13,4) NOT NULL,
-  unit_price DECIMAL(13,4) NOT NULL,
-  PRIMARY KEY (item_id),
+  createdAt TIMESTAMP NOT NULL,
+  PRIMARY KEY (item_id)
 );
