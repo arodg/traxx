@@ -21,10 +21,8 @@ app.get('/api/hello', (req, res) => {
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 // Import routes and give the server access to them.
-//var routes = require("./routes");
-
-// Use apiRoutes
-//app.use("/api", routes);
+const routes = require("./routes");
+app.use(routes);
 
 // Send every request to the React app
 // Define any API routes before this runs
