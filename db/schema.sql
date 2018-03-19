@@ -9,7 +9,6 @@ CREATE TABLE employees
   employee_id INT AUTO_INCREMENT NOT NULL,
   last_name VARCHAR(25) NOT NULL,
   first_name VARCHAR(25) NOT NULL,
-  email VARCHAR(50) NOT NULL,
   createdAt TIMESTAMP NOT NULL,
   PRIMARY KEY (employee_id)
 );
