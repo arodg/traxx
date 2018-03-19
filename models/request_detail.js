@@ -42,6 +42,12 @@ module.exports = function(sequelize, DataTypes) {
       foreignKey: "request_id"
     });
   };
+
+  request_detail.associate = function (models) {
+    request_detail.belongsTo(models.items, {
+      foreignKey: "item_id"
+    });
+  };
     
   return request_detail;
   
