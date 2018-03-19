@@ -14,13 +14,14 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.get('/api/hello', (req, res) => {
-  res.send({ express: 'Hello From Traxx' });
-});
+// Test
+//app.get('/api/hello', (req, res) => {
+//  res.send({ express: 'Hello From Traxx' });
+//});
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+//app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-// Import routes and give the server access to them.
+//Import routes and give the server access to them.
 const routes = require("./routes");
 app.use(routes);
 
@@ -32,9 +33,9 @@ app.use(routes);
 
 
 // Sync sequelize models
-//var db = require("./models");
-//db.sequelize.sync({force: true}).then(function() {
-//	app.listen(PORT,function() {
-	//	console.log("App now listening at localhost:" + PORT);
-//	});
-//});
+var db = require("./models");
+db.sequelize.sync({force: false}).then(function() {
+	app.listen(PORT,function() {
+		console.log("App now listening at localhost:" + PORT);
+	});
+});
