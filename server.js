@@ -16,19 +16,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Test
-app.get('/', (req, res) => {
-	res.send({ express: 'Hello From Trax' });
-});
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
-	res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
 // Add routes
 app.use(routes);
+
 
 // Sync sequelize models
 const db = require("./models");

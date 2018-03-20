@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var item = sequelize.define("items", {
+  var item = sequelize.define("item", {
     
     item_id: {
       type: DataTypes.INTEGER,
@@ -13,8 +13,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-  
-  });
+
+    }, {
+      freezeTableName: true,
+      underscored: true
+    }
+  );
     
   return item;
 };

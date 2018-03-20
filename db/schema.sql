@@ -4,7 +4,7 @@ CREATE DATABASE traxx_db;
 USE traxx_db;
 
 
-CREATE TABLE employees 
+CREATE TABLE employee
 (
   employee_id INT AUTO_INCREMENT NOT NULL,
   last_name VARCHAR(25) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE employees
 );
 
 
-CREATE TABLE purchase_requests
+CREATE TABLE pr
 (
   request_id INT AUTO_INCREMENT NOT NULL,
   employee_id INT NOT NULL,
@@ -30,13 +30,13 @@ CREATE TABLE purchase_requests
   request_status ENUM ("approved", "pending", "denied") NOT NULL,
   createdAt TIMESTAMP NOT NULL,
   
-  FOREIGN KEY (employee_id) REFERENCES employees (employee_id),
+  FOREIGN KEY (employee_id) REFERENCES employee (employee_id),
   
   PRIMARY KEY (request_id)
 );
 
 
-CREATE TABLE request_detail
+CREATE TABLE detail
 (
   request_id INT NOT NULL,
   item_id INT NOT NULL,
@@ -46,14 +46,14 @@ CREATE TABLE request_detail
   request_line_number INT NOT NULL,
   createdAt TIMESTAMP NOT NULL,
 
-  FOREIGN KEY (request_id) REFERENCES purchase_requests (request_id),
-  FOREIGN KEY (item_id) REFERENCES items (item_id),
+  FOREIGN KEY (request_id) REFERENCES pr (request_id),
+  FOREIGN KEY (item_id) REFERENCES item (item_id),
   
   PRIMARY KEY (request_id, item_id)
 );
 
 
-CREATE TABLE items
+CREATE TABLE item
 (
   item_id INT AUTO_INCREMENT NOT NULL,
   item_name VARCHAR(50) NOT NULL,

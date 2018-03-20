@@ -1,5 +1,114 @@
+
 body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #f9f7ea;
+}
+
+a {
+  color: #6a6c6c;
+  margin-left: 100px;
+  font-size: 10px;
+}
+
+h1 {
+  color: #123758;
+  font-size: 16px;
+  margin: 20px;
+}
+
+h2 {
+  color: #123758;
+  font-size: 16px;
+}
+
+element.style {
+  color: #123758;
+}
+
+form {
+  font-size: 14px;
+  text-align: center;
+}
+
+span {
+  font-size: 24px;
+  color: #123758;
+}
+
+input {
+  background-color: #e1ebda;
+  color: #123758;
+  padding-right: 50px;
+}
+
+#welcome {
+text-align: center;
+}
+
+nav {
+  background-color: #e1ebda;
+  display: block;
+  color:#123758;
+  text-align: right;
+  padding: 60px 0 40px;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.active {
+  background-color: #e1ebda;
+}
+
+hr{
+ margin-bottom: 6rem;
+}
+
+header{
+  background-color: #e1ebda;
+  display: block;
+  color: white;
+  padding: 60px 0 40px;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+footer{
+  background-color: #123758;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 60px 0 40px;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  position: absolute;
+  bottom:0;
+  width:100%;
+  height:60px;  
+}
+
+#logo {
+  height: 50px;
+  width: 125px;
+  margin: 10px;
+}
+
+.container {
+  margin: 0px;
+  padding: 0px;
+}
+
+@media (min-width: 992px) {
+  .container {
+      max-width: 100%;
+  }
+
+}
+
+a#true {
+  color: #123758;
 }
