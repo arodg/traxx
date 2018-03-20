@@ -64,5 +64,4 @@ export const StateDrop = props => (
 	<option value="WI">WI</option>	
 	<option value="WV">WV</option>
 	<option value="WY">WY</option>
-	
 </select>);		
