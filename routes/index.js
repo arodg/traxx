@@ -8,9 +8,9 @@ const app = express();
 router.use("/api", apiRoutes);
 
 // Test
-app.get('/', (req, res) => {
-	res.send({ express: 'Hello From Trax' });
-});
+//app.get('/', (req, res) => {
+	//res.send({ express: 'Hello From Trax' });
+//});
 
 // Define any API routes before this runs
 app.post("/api/items", function(req,res) {
