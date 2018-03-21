@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var pr = sequelize.define("pr", {
+  var Pr = sequelize.define("Pr", {
     
     request_id: {
       type: DataTypes.INTEGER,
@@ -68,12 +68,12 @@ module.exports = function(sequelize, DataTypes) {
     
   );
   
-  pr.associate = function(models) {
-    pr.belongsTo(models.employee, {
+  Pr.associate = function(models) {
+    Pr.belongsTo(models.Employee, {
       foreignKey: "employee_id"
     });
   };
   
-  return pr;
+  return Pr;
 };
 
