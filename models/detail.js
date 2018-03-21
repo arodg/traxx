@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
-  var detail = sequelize.define("detail", {
+  var Detail = sequelize.define("Detail", {
     
     request_id: {
       type: DataTypes.INTEGER,
@@ -41,18 +41,18 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
 
-  detail.associate = function (models) {
-    detail.belongsTo(models.pr, {
+  Detail.associate = function (models) {
+    Detail.belongsTo(models.Pr, {
       foreignKey: "request_id"
     });
   };
 
-  detail.associate = function (models) {
-    detail.hasMany(models.item, {
+  Detail.associate = function (models) {
+    Detail.hasMany(models.Item, {
       foreignKey: "item_id"
     });
   };
     
-  return detail;
+  return Detail;
   
 };
