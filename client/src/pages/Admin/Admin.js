@@ -9,7 +9,7 @@ const Admin = () => {
         return ( 
             <div>
                 <AdminNavbar />
-                <h1>Administrator Home Page</h1>
+                <h1>Administrator Page</h1>
                 <hr></hr>
                 <Hello />
                 <SecurityRole />

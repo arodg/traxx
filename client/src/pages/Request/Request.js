@@ -3,6 +3,7 @@ import API from "../../utils/API"
 import ReactDOM from "react-dom";
 import { Input, FormBtn, TextArea } from "../../components/Form";
 import { UnitDropdown } from "../../components/Dropdown";
+import HomeNavbar from '../../components/HomeNavbar';
 import Modal from "../../components/Modal";
 import Table from "../../components/Table";
 
@@ -59,6 +60,8 @@ class Request extends Component {
   render() {
     const { showModal } = this.state;
     return (
+     <div> 
+      <HomeNavbar />
       <form>
         <FormBtn
           className="btn show-modal"
@@ -161,6 +164,7 @@ class Request extends Component {
           </div>
         </div>
       </form>
+      </div>
     );
   }
 }
