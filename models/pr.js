@@ -8,44 +8,29 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       primaryKey: true
     },
-
-    employee_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
-    approver_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
+      
     request_created: {
-      type: DataTypes.DATE,
-      allowNull: false
+      type: DataTypes.DATE
     },
 
     request_required: {
-      type: DataTypes.DATE,
-      allowNull: false
+      type: DataTypes.DATE
     },
 
     request_approved: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATE
     },
 
     tax_rate: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
+      type: DataTypes.DECIMAL
     },
 
     estimated_shipping: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
+      type: DataTypes.DECIMAL
     },
 
     request_total: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
+      type: DataTypes.DECIMAL
     },
 
     justification: {
@@ -67,12 +52,6 @@ module.exports = function(sequelize, DataTypes) {
     }
     
   );
-  
-  Pr.associate = function(models) {
-    Pr.belongsTo(models.Employee, {
-      foreignKey: "employee_id"
-    });
-  };
   
   return Pr;
 };

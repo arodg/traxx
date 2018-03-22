@@ -10,21 +10,20 @@ import Table from "../../components/Table";
 class Request extends Component {
   constructor(props) {
     super(props);
-    this.items={};
+    this.item={};
     this.state = {
       item: {
-        itemName: "",
-        itemQuant: "",
-        measureUnit: "",
-        estPrice: "",
-        estTotal: ""
+        item_name: "",
+        quantity: "",
+        unit_price: "",
+        extended_price: ""
       },
-      taxRate: "",
-      estShip: "",
+      request_required: "",
+      tax_rate: "",
       totalPrice: "",
-      dateNeeded: "",
-      vendor: "",
-      justify: "",
+      est_shipping: "",
+      request_total: "",
+      justification: "",
       comments: "",
       showModal: false    };
   }
@@ -32,10 +31,10 @@ class Request extends Component {
   handleItemSave = event => {
     event.preventDefault();
     API.saveItem({
-      item_name: this.state.item.itemName,
-      item_quant: this.state.item.itemQuant,
-      item_unit: this.state.item.measureUnit,
-      price: this.state.item.estPrice,
+      item_name: this.state.item.item_name,
+      quantity: this.state.item.quantity,
+      unit_price: this.state.item.unit_price,
+      extended_price: this.state.item.extended_price
     })
   };
 

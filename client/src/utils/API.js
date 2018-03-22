@@ -52,20 +52,5 @@ export default {
     return axios.post("/api/item", itemData);
   },
 
-  // Gets all purchase request details
-  getDetails: function() {
-    return axios.get("/api/detail");
-  },
-  // Gets request detail with the given id
-  getDetail: function(id) {
-    return axios.get("/api/detail/" + id);
-  },
-  // Deletes a request detail with the given id
-  deleteDetail: function(id) {
-    return axios.delete("/api/detail/" + id);
-  },
-  // Saves a request detail to the database
-  saveDetail: function(detailData) {
-    return axios.post("/api/detail", detailData);
-  }
+  
 };

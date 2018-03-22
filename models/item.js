@@ -5,28 +5,23 @@ module.exports = function(sequelize, DataTypes) {
     
     request_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      allowNull: false
     },
 
     item_name: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.STRING,
     },
 
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false
     },
 
     unit_price: {
       type: DataTypes.DECIMAL,
-      allowNull: false
     },
 
     extended_price: {
       type: DataTypes.DECIMAL,
-      allowNull: false
     },
 
   }, {
@@ -35,13 +30,6 @@ module.exports = function(sequelize, DataTypes) {
     }
   );
 
-  Item.associate = function (models) {
-    Item.belongsTo(models.Pr, {
-      foreignKey: "request_id"
-    });
-  };
-
-    
   return Item;
   
 };
