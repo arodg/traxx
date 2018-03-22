@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const prRoutes = require("./pr");
 const itemRoutes = require("./item");
-const detailRoutes = require("./detail")
+const employeeRoutes = require("./employee")
 
 // Purchase Request routes
 router.use("/pr", prRoutes);
@@ -9,7 +9,7 @@ router.use("/pr", prRoutes);
 // Item routes
 router.use("/item", itemRoutes);
 
-// Purchase Request detail routes
-router.use("/detail", detailRoutes);
+// Employee routes
+router.use("/employee", employeeRoutes);
 
 module.exports = router;
