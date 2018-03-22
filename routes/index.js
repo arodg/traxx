@@ -13,12 +13,12 @@ router.use("/api", apiRoutes);
 //});
 
 // Define any API routes before this runs
-app.post("/api/items", function(req,res) {
-  console.log(req.body);
-  models.items.create(req.body)
-  .then(() => console.log("success"))
-  .catch(err => console.log(err))
-})
+//app.post("/api/items", function(req,res) {
+  //console.log(req.body);
+  //models.items.create(req.body)
+  //.then(() => console.log("success"))
+  //.catch(err => console.log(err))
+//})
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
